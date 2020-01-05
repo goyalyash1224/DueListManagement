@@ -1,0 +1,22 @@
+{% extends 'agents/base.html' %}
+
+{% block extend_head %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>Welcome to my site ,{% if user.is_authenticated %} {{ user.username }} {% else %} visitor {% endif %}</h1>
+    <p>
+        <strong>Total agents registered:</strong>  {{ count }}
+
+
+    </p>
+    <div>
+         <a href="{% url 'customers_home' %}"> customers </a>
+    </div>
+
+{% endblock %}
