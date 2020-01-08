@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import  date
-
+import uuid
 
 from customers.models import *
 
@@ -13,6 +13,7 @@ class RdUser(models.Model):
         ('Inactive', 'Inactive')
     )
 
+    id = models.UUIDField(primary_key=True,unique=True, default=uuid.uuid4, editable=False)
     customer = models.OneToOneField('customers.Customer',on_delete=models.CASCADE,related_name='rd_user')
     # status = models.CharField(default="Inactive",choices=Status_Choices, max_length=10)
     serial_no = models.CharField(max_length=4,unique=True)
@@ -82,7 +83,7 @@ class RdData(models.Model):
 
 
     # YEAR_CHOICES = [(r, r) for r in range(2013, 2020)]
-
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     rd_user = models.ForeignKey(RdUser, on_delete=models.CASCADE, related_name='rd_data')
     kisht_date = models.DateField(verbose_name='Kishat Month')
     payment_date = models.DateField()

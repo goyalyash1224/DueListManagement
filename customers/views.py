@@ -30,3 +30,13 @@ def add_new_customer(request):
     else:
         form = NewCustomerForm()
     return render(request, 'customers/new_customer.html',{'form': form})
+
+
+def customer_profile(request, id=id):
+    customer = Customer.objects.get(id=id)
+    if request.user.is_authenticated:
+        return render(request, 'customers/customer_profile.html',{'customer':customer})
+    else:
+        return redirect('Home')
+
+

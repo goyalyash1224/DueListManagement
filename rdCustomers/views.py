@@ -10,12 +10,12 @@ from django import forms
 from django.forms import widgets
 # Create your views here.
 
-def index(request, id):
-    active_customer = get_object_or_404(Customer,pk=id)
-    rd_customer = active_customer.rd_user
-    return render(request,'rdCustomers/index.html',{'rd_customer':rd_customer})
+def index(request, id=id):
+    rd_customer = get_object_or_404(RdUser,pk=id)
+    customer = rd_customer.customer
+    return render(request,'rdCustomers/index1.html',{'customer':customer,'rd_customer':rd_customer})
 
-def activate(request,id):
+def activate(request,id=id):
     customer = get_object_or_404(Customer, pk=id)
 
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def activate(request,id):
             active_rd = form.save(commit=False)
             active_rd.customer = customer
             active_rd.save()
-            return redirect('rd_customer_data', id =customer.id)
+            return redirect('rd_customer_view', id = active_rd.id)
     else:
         form = ActivateCustomerForm()
     return render(request, 'rdCustomers/activate_user.html',{'form': form,'customer':customer})

@@ -9,6 +9,6 @@ from django.conf.urls.static import static
 from rdCustomers import views
 
 urlpatterns  = [
-    path('customer/<int:id>/',views.index,name = 'rd_customer_data'),
-    path('customer/activate/<int:id>',views.activate,name = 'rd_customer_activate')
+    path('<uuid:id>/',views.index,name = 'rd_customer_view'),
+    path('activate/<uuid:id>/',views.activate,name = 'rd_customer_activate')
 ]
