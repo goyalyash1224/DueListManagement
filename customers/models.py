@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 
 # Create your models here.
 
@@ -20,6 +21,7 @@ class Customer(models.Model):
 
 
     # Fields
+    id = models.UUIDField(primary_key=True,unique=True, default=uuid.uuid4, editable=False)
     agent = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customers')
     name = models.CharField(max_length=20, help_text='Enter field documentation')
     # last_name = models.CharField(max_length=20,blank=True, help_text='Enter field documentation')
