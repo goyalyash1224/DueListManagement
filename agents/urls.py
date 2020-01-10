@@ -11,6 +11,7 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     path('login', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('signup',agents_views.signup,name = 'signup'),
+    path('dashboard', agents_views.dashboard),
 #     path('reset/',
 #     auth_views.PasswordResetView.as_view(
 #         template_name='password_reset.html',
