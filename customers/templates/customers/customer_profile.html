@@ -29,9 +29,10 @@ Customers
           <!--<th>Home Town</th>-->
           <!--<th>Ph. No.</th>-->
               <th>
+                    activate
+
               </th>
-              <th>
-              </th>
+
           </tr>
         </thead>
         <tbody>
@@ -41,12 +42,14 @@ Customers
               <!--<small style="color: #888">{{ customer.description }}</small>-->
             </td>
             <td>{{ customer.dob }}</td>
-               <td>
-                   {% if customer.rd_user is none %}
+
+
+                <td>
+
                 <a href="{% url 'rd_customer_activate' customer.id %}"> activate {{ customer.id }} </a>
-                       {% else %}
-                   RD activated <a href="{% url 'rd_customer_view' customer.rd_user.id %}"> view rd_data</a>
-                   {% endif %}
+
+
+
                </td>
 
 
@@ -56,6 +59,7 @@ Customers
       </table>
 
     </div>
+
 
 {% block profile_extension %}
 {% endblock %}

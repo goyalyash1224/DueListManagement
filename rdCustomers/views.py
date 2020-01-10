@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import View
 from .models import Item
 from django.forms.models import modelform_factory
-from .forms import DateSelectorWidget, ActivateCustomerForm
+from .forms import DateSelectorWidget, ActivateCustomerForm , PayKishtForm
 from django import forms
 from django.forms import widgets
 # Create your views here.
@@ -13,7 +13,7 @@ from django.forms import widgets
 def index(request, id=id):
     rd_customer = get_object_or_404(RdUser,pk=id)
     customer = rd_customer.customer
-    return render(request,'rdCustomers/index1.html',{'customer':customer,'rd_customer':rd_customer})
+    return render(request,'rdCustomers/index1.html',{'customer':customer ,'rd_customer':rd_customer})
 
 def activate(request,id=id):
     customer = get_object_or_404(Customer, pk=id)
@@ -30,22 +30,31 @@ def activate(request,id=id):
     return render(request, 'rdCustomers/activate_user.html',{'form': form,'customer':customer})
 
 
-class MyDatAppView(View):
-    form_class = modelform_factory(Item ,
-                                   exclude=[],
-                                   widgets={ 'partial_date_date':
-                                              DateSelectorWidget() ,})
-    initial = {'some_comment': '-*-', }
-    template_name = 'customer/includes/form.html'
+def paykisht(request, id):
+    rd_customer = get_object_or_404(RdUser, pk=id)
+    customer = rd_customer.customer
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class(initial=self.initial)
-        return render(request, self.template_name, {'form': form})
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
+    if request.method == 'POST':
+        form = PayKishtForm(request.POST)
         if form.is_valid():
-            m=form.save()
-            return HttpResponseRedirect('/')
+            rd_kisht = form.save(commit=False)
+            rd_kisht.rd_user = rd_customer
+            return redirect('rd_customer_view', id=rd_kisht.rd_user.id)
+        else:
+            form = PayKishtForm()
+            return render(request, 'rdCustomers/payKisht.html', {'form': form, 'customer': customer})
 
-        return render(request, self.template_name, {'form': form})
+
+
+
+
+
+
+
+
+
+
+
+# def data(request, id):
+

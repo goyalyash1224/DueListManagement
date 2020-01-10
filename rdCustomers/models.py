@@ -86,7 +86,8 @@ class RdData(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     rd_user = models.ForeignKey(RdUser, on_delete=models.CASCADE, related_name='rd_data')
     kisht_date = models.DateField(verbose_name='Kishat Month')
-    payment_date = models.DateField()
+    payment_date = models.DateField(verbose_name="Payment Received date")
+    entry_time = models.DateTimeField(auto_now=True, null=True)
     message = models.TextField(max_length=250, blank=True,default='')
 
 

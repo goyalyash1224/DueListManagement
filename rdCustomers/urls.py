@@ -10,5 +10,7 @@ from rdCustomers import views
 
 urlpatterns  = [
     path('<uuid:id>/',views.index,name = 'rd_customer_view'),
-    path('activate/<uuid:id>/',views.activate,name = 'rd_customer_activate')
+    path('activate/<uuid:id>/',views.activate,name = 'rd_customer_activate'),
+    # path('data/<uuid:id>',views.data, name  = 'rd_customer_data'),
+    path('paykisht/<uuid:id>/', views.paykisht, name='pay_kisht'),
 ]

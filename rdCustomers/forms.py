@@ -2,10 +2,11 @@ from django import forms
 from django.forms import widgets
 from datetime import date
 from rdCustomers.models import *
+from django.forms import SelectDateWidget
 
 class DateSelectorWidget(widgets.MultiWidget):
     def __init__(self, attrs=None):
-        days = [(d, d) for d in range(1,32)]
+        days = [(d, d) for d in range(1,2)]
         months = [(m, m) for m in range(1,13)]
         years = [(year, year) for year in (2011, 2012, 2013)]
         _widgets = (
@@ -32,9 +33,7 @@ class DateSelectorWidget(widgets.MultiWidget):
             )
         return D
 
-class ItemForm(forms.Form):
-    partial_date_part = forms.CharField(widget=forms.RadioSelect)
-    partial_date_date = DateSelectorWidget( )
+
 
 
 
@@ -45,3 +44,18 @@ class ActivateCustomerForm(forms.ModelForm):
     class Meta:
         model = RdUser
         fields = ['serial_no','Denom_value','start_date','total_policy_year']
+
+
+
+
+
+
+
+class PayKishtForm(forms.ModelForm):
+    kisht_date = forms.DateField(widget=DateSelectorWidget())
+    payment_date = forms.DateField(widget=SelectDateWidget())
+
+    class Meta:
+        model = RdData
+        fields = ['kisht_date','payment_date','message']
+
