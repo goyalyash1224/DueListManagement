@@ -513,6 +513,36 @@ background:#fff;
     font-size: 0.7em;
     margin-bottom: 0px;
 }
+.profile-box{
+  border:1px solid #f2f3f7;
+  height:100%;
+  position: fixed;
+  width :24%;
+  margin-left:0px;
+  box-sizing:border-box;
+  overflow-y:scroll;
+  background: #f2f3f7;
+  background: #f2f3f7;
+  box-shadow:5px 5px #f2f3f7;
+  }
+.profile-pic{
+    width: 150px;
+    height: 150px;
+    margin: 80px auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+}
+.profile-heading{
+   position:relative;
+   margin-left:37%;
+   font-size:1.9em;
+}
+.profile-content{
+  font-size:1.1em;
+  text-align:center;
+  color:#48484a;
+}
+
   </style>
 </head>
 <body>
@@ -557,207 +587,10 @@ background:#fff;
                     </ul>
                 </div>
             </nav>
-<div class="bvs-container">
-  <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);">
-        </div>
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);">
-        </div>
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=52);">
-        </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-   <div class="swiper-pagination"></div>
+<div>
+    {% block home %}
+    {% endblock %}
 </div>
-
-<section class="section_all bg-light" id="about">
-            <div class="container">
-                <div class="row">
-                   <h1 class="section-header">ABOUT US</h1>
-                </div>
-
-                <div class="row vertical_content_manage mt-5">
-                    <div class="col-lg-6">
-                        <div class="about_header_main mt-3">
-
-                            <h4 class="about_heading text-capitalize font-weight-bold mt-4">Lorem Ipsum is simply dummy text of the printing industry.</h4>
-                            <p class="text-muted mt-3">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-
-                            <p class="text-muted mt-3"> Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="col-lg-6">
-                        <div class="img_about mt-3">
-                            <img src="https://i.ibb.co/qpz1hvM/About-us.jpg" alt="" class="img-fluid mx-auto d-block">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <div class="about_content_box_all mt-3">
-                            <div class="about_detail text-center">
-                                <div class="about_icon">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </div>
-                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Creative Design</h5>
-                                <p class="edu_desc mt-3 mb-0 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="about_content_box_all mt-3">
-                            <div class="about_detail text-center">
-                                <div class="about_icon">
-                                    <i class="fab fa-angellist"></i>
-                                </div>
-                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">We make Best Result</h5>
-                                <p class="edu_desc mb-0 mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="about_content_box_all mt-3">
-                            <div class="about_detail text-center">
-                                <div class="about_icon">
-                                    <i class="fas fa-paper-plane"></i>
-                                </div>
-                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">best platform </h5>
-                                <p class="edu_desc mb-0 mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<!--   <div class="container">-->
-<!--      {% block content %}-->
-<!--       <h1>hello wolrd</h1>-->
-<!--      {% endblock %}-->
-<!--    </div>-->
-<div id="developer">
-<h1 class="section-header">DEVELOPERS</h1>
-<div class="row">
-
-  <div class="col-md-3 col-sm-12 cards">
-		<div class="square-card">
-	<a href="#" alt="square card">
-		<div class="card-header">
-
-		</div>
-		<div class="card-title">
-			<h4>cocktail fruit salad with freshness</h4>
-		</div>
-		<div class="cta">
-<!-- 			<a href="https://google.com">view recipe</a> -->
-			<a  href="https://google.com">add to bag</a>
-		</div>
-	</a>
-</div>
-	</div>
-	<div class="col-md-3 col-sm-12 cards">
-		<div class="square-card">
-	<a href="#" alt="square card">
-        <div class="card-header">
-
-		</div>
-		<div class="card-title">
-			<h4>cocktail fruit salad with freshness</h4>
-		</div>
-		<div class="cta">
-<!-- 			<a href="https://google.com">view recipe</a> -->
-			<a  href="https://google.com">add to bag</a>
-		</div>
-	</a>
-</div>
-	</div>
-</div>
-</div>
-
-<section id="contact">
-
-  <h1 class="section-header">CONTACT US</h1>
-
-  <div class="contact-wrapper">
-
-      <!----------------
-
-      CONTACT PAGE LEFT
-
-      ----------------->
-
-    <form class="form-horizontal" role="form" method="post" action="contact.php">
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
-        </div>
-      </div>
-
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
-
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-        <div>
-         send
-        </div>
-
-      </button>
-
-    </form>
-
-      <!----------------
-
-      CONTACT PAGE RIGHT
-
-      ----------------->
-
-      <div class="direct-contact-container">
-
-        <ul class="contact-list">
-          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Seattle | WA</span></i></li>
-
-          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone">(212) 555-2368</span></i></li>
-
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail">emailme@gmail.com</span></i></li>
-
-        </ul>
-
-        <hr>
-        <ul class="social-media-list">
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-twitter" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-codepen" aria-hidden="true"></i></a>
-          </li>
-        </ul>
-        <hr>
-
-        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
-
-      </div>
-
-  </div>
-
-</section>
 <div class="footer">
   <p class="text">&copy; ALL OF THE RIGHTS RESERVED</p>
 </div>
@@ -783,3 +616,8 @@ background:#fff;
 
 </body>
 </html>
+<!--   <div class="container">-->
+<!--      {% block content %}-->
+<!--       <h1>hello wolrd</h1>-->
+<!--      {% endblock %}-->
+<!--    </div>-->

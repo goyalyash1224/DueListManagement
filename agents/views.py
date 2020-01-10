@@ -26,3 +26,6 @@ def signup(request):
     return render(request,'registration/signup.html', {
         'form':form
     })
+
+def dashboard(request):
+    return render(request, 'agents/dashboard.html')
