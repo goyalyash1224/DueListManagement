@@ -1,0 +1,54 @@
+{% extends 'agents/base.html' %}
+{% block home %}
+        <div class="profile-box">
+          <div class="profile-pic" style="background-image: url(https://mdbootstrap.com/img/logo/mdb-transparent.png);"></div>
+            <h1 class="profile-heading" > {{ agent.username }} </h1>
+            <h4 class="profile-content">{{ agent.email }}</h4>
+        </div>
+
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Customers</th>
+									<th class="cell100 column2">DOB</th>
+									<th class="cell100 column3">Hours</th>
+									<th class="cell100 column4">Trainer</th>
+									<th class="cell100 column5">Spots</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+							{% for customer in agent.customers.all %}
+
+								<tr class="row100 body" >
+									<td class="cell100 column1"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+									<td class="cell100 column2">{{ customer.dob }}</td>
+									<td class="cell100 column3">9:00 AM - 11:00 AM</td>
+									<td class="cell100 column4">Aaron Chapman</td>
+									<td class="cell100 column5">10</td>
+								</tr>
+							{% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+            {% endblock %}

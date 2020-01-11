@@ -13,7 +13,7 @@ from django.forms import widgets
 def index(request, id=id):
     rd_customer = get_object_or_404(RdUser,pk=id)
     customer = rd_customer.customer
-    return render(request,'rdCustomers/index1.html',{'customer':customer ,'rd_customer':rd_customer})
+    return render(request,'rdCustomers/index.html',{'customer':customer ,'rd_customer':rd_customer})
 
 def activate(request,id=id):
     customer = get_object_or_404(Customer, pk=id)
@@ -40,21 +40,26 @@ def paykisht(request, id):
         if form.is_valid():
             rd_kisht = form.save(commit=False)
             rd_kisht.rd_user = rd_customer
+            rd_kisht.save()
             return redirect('rd_customer_view', id=rd_kisht.rd_user.id)
-        else:
-            form = PayKishtForm()
-            return render(request, 'rdCustomers/payKisht.html', {'form': form, 'customer': customer})
+    else:
+        form = PayKishtForm()
+        context = {
+
+            'customer': customer,
+            'rd_customer': rd_customer,
+            'form': form
+        }
+        return render(request, 'rdCustomers/payKisht.html', (context))
 
 
 
 
+def kishtdata(request, id):
+    rd_customer = get_object_or_404(RdUser, pk=id)
 
+    context = {
 
-
-
-
-
-
-
-# def data(request, id):
-
+        'rd_customer': rd_customer,
+    }
+    return render(request, 'rdCustomers/kishtData.html', (context))

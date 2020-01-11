@@ -13,4 +13,5 @@ urlpatterns  = [
     path('activate/<uuid:id>/',views.activate,name = 'rd_customer_activate'),
     # path('data/<uuid:id>',views.data, name  = 'rd_customer_data'),
     path('paykisht/<uuid:id>/', views.paykisht, name='pay_kisht'),
+    path('kishtdata/<uuid:id>/',views.kishtdata, name = 'kisht data')
 ]

@@ -8,11 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    count = User.objects.count()
-
-    return render(request,'agents/home.html', {
-        'count':count
-    })
+    return render(request,'agents/home.html')
 
 def signup(request):
     if(request.method == 'POST'):
@@ -26,6 +22,3 @@ def signup(request):
     return render(request,'registration/signup.html', {
         'form':form
     })
-
-def dashboard(request):
-    return render(request, 'agents/dashboard.html')

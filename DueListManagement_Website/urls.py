@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('customers/', include('customers.urls')),
+    path('dashboard/', include('customers.urls')),
     path('', include('agents.urls')),
     path('rdcustomers/',include('rdCustomers.urls')),
     # path('', RedirectView.as_view(url='customers/', permanent=True)),

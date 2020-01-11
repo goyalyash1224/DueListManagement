@@ -8,9 +8,9 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 @login_required
-def customers_home(request):
+def dashboard(request):
     if request.user.is_authenticated:
-        return render(request, 'customers/home.html',{'user':request.user})
+        return render(request, 'customers/dashboard.html',{'agent':request.user})
     else:
         return redirect('Home')
 
@@ -26,17 +26,21 @@ def add_new_customer(request):
             customer = form.save(commit=False)
             customer.agent = user
             customer.save()
-            return redirect('customers_home')
+            return redirect('dashboard')
     else:
         form = NewCustomerForm()
     return render(request, 'customers/new_customer.html',{'form': form})
 
 
 def customer_profile(request, id=id):
+    agent = request.user
     customer = Customer.objects.get(id=id)
+    context = {
+        'agent': agent,
+        'customer':customer,
+    }
     if request.user.is_authenticated:
-        return render(request, 'customers/customer_profile.html',{'customer':customer})
-    else:
+        return render(request, 'customers/customer_profile.html',context)
         return redirect('Home')
 
 
