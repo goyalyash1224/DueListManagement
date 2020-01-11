@@ -6,11 +6,10 @@ from django.forms import SelectDateWidget
 
 class DateSelectorWidget(widgets.MultiWidget):
     def __init__(self, attrs=None):
-        days = [(d, d) for d in range(1,2)]
+
         months = [(m, m) for m in range(1,13)]
         years = [(year, year) for year in (2011, 2012, 2013)]
         _widgets = (
-            widgets.Select(attrs=attrs, choices=days),
             widgets.Select(attrs=attrs, choices=months),
             widgets.Select(attrs=attrs, choices=years),
         )
@@ -29,7 +28,7 @@ class DateSelectorWidget(widgets.MultiWidget):
             widget.value_from_datadict(data, files, name + '_%s' % i)
             for i, widget in enumerate(self.widgets)]
         D = date(
-                day=int(datelist[0]),month=int(datelist[1]),year=int(datelist[2]),
+                day=1,month=int(datelist[0]),year=int(datelist[1]),
             )
         return D
 

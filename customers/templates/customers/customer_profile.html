@@ -1,4 +1,4 @@
-{% extends 'agents/base.html' %}
+{% extends 'customers/dashboard.html' %}
 {% load static %}
 
 
@@ -8,14 +8,14 @@ Customers
 {% endblock %}
 
 
-{% block content %}
+{% block home %}
 
 
 
 
 <div class="container">
       <ol class="breadcrumb my-4">
-        <li class="breadcrumb-item active" ><a href="{% url 'customers_home' %}">Customers</a>  </li>
+        <li class="breadcrumb-item active" ><a href="{% url 'dashboard' %}">Customers</a>  </li>
           <li class="breadcrumb-item "> {{ customer.name }} </li>
       </ol>
 
@@ -46,7 +46,7 @@ Customers
 
                 <td>
 
-                <a href="{% url 'rd_customer_activate' customer.id %}"> activate {{ customer.id }} </a>
+
 
 
 
@@ -61,8 +61,7 @@ Customers
     </div>
 
 
-{% block profile_extension %}
-{% endblock %}
+
 
 
 

@@ -1,4 +1,4 @@
-{% extends 'agents/base.html' %}
+{% extends 'customers/dashboard.html' %}
 {% load static %}
 {% load widget_tweaks %}
 
@@ -14,19 +14,15 @@
 
 
 
-{% block content %}
-  <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-      <!--<div class="container">-->
-        <!--<a class="navbar-brand" href="{% url 'customers_home' %}">Django Boards</a>-->
-      <!--</div>-->
-    <!--</nav>-->
+{% block home %}
 
+<div class="limiter">
 <h1> Add Customer</h1>
 
     <div class="container">
       <ol class="breadcrumb my-4">
-        <li class="breadcrumb-item"><a href="{% url 'customers_home' %}">Customers</a></li>
-  <!--<li class="breadcrumb-item"><a href="#">new customer</a></li>-->
+        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Customers</a></li>
+
   <li class="breadcrumb-item active">New Customer</li>
       </ol>
 
@@ -37,4 +33,5 @@
     {% include 'customers/includes/form.html' %}
     <button type="submit" class="btn btn-success">Add</button>
   </form>
+        </div>
 {% endblock %}
