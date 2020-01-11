@@ -728,11 +728,10 @@ th, td {
   background-color: #cccccc;
 }
 .wrap-table100 {
-    width: 794px;
-     margin-top: 8px;
-     margin-left:10%;
-     }
-
+    width: 61%;
+    margin-top: 8px;
+    margin-left: -1%;
+}
 
 
 <!--.function {-->
@@ -749,8 +748,8 @@ th, td {
 
 .he{
 margin-top:12%;
-width:60%;
-margin-left:771px;
+width:74%;
+margin-left:25%;
 position:absolute;
 }
   </style>
@@ -777,7 +776,7 @@ position:absolute;
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               {{ user.username }} </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
-                                <a class="dropdown-item" href="#">My account</a>
+                                <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>
                                 <a class="dropdown-item" href="#">Change password</a>
                                <div class="dropdown-divider"></div>
                                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
