@@ -1,9 +1,13 @@
+*.pyc
+
+
+
 
 # Default ignored files
 /workspace.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
-**/__pycache__
+**/__pycache__/
 
 *.pyc
 *.py[cod]
@@ -133,3 +137,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+**/migrations
+*.slite3
+

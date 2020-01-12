@@ -144,6 +144,11 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 
+LOGIN_EXEMPT_URLS ={
+    'password_change_done',
+}
+
+
 SOCIAL_AUTH_GITHUB_KEY = 'c3fd3b5adcf8cb4e5757'
 
 SOCIAL_AUTH_GITHUB_SECRET = '151b85adc9773411ab29886a63ae960658258bb8'
@@ -161,4 +166,19 @@ AUTHENTICATION_BACKENDS = (
 
 )
 
+
+
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testsite_app'
+EMAIL_HOST_PASSWORD = 'mys3cr3tp4ssw0rd'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
+
+
+
+#managing media
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

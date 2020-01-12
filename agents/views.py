@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
 from .forms import *
@@ -19,6 +19,42 @@ def signup(request):
             return redirect('Home')
     else:
         form = SignUpForm()
-    return render(request,'registration/signup.html', {
+    return render(request,'registrations/signup.html', {
         'form':form
     })
+
+def view_profile(request):
+    args = {'user':request.user}
+    return render(request,'agents/profile.html', args)
+
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('view_profile')
+
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form':form}
+        return render(request, 'agents/edit_profile.html',args)
+
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('password_change_done')
+        else:
+            return redirect('change_password')
+
+    else:
+        form = PasswordChangeForm(user=request.user)
+        args = {'form':form}
+        return render(request, 'registrations/password_change.html',args)
+

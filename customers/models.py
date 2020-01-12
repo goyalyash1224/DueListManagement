@@ -23,25 +23,24 @@ class Customer(models.Model):
     # Fields
     id = models.UUIDField(primary_key=True,unique=True, default=uuid.uuid4, editable=False)
     agent = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customers')
-    name = models.CharField(max_length=20, help_text='Enter field documentation')
-    # last_name = models.CharField(max_length=20,blank=True, help_text='Enter field documentation')
-    # father_husband_name =  models.CharField(max_length=30, help_text='Enter field documentation')
-    # gender =  models.CharField(max_length= 1, choices=GENDER_CHOICES,help_text='Enter field documentation')
-    # hometown =  models.CharField(max_length= 20, help_text='Enter field documentation')
-    # pincode =  models.CharField(help_text='Enter pincode',max_length=6)
-    # occupation =  models.CharField(max_length= 20, help_text='Enter field documentation')
-    # date_joined = models.DateTimeField(auto_now=True)
-    # profile_picture = models.ImageField(blank=True,help_text="Upload image")
-    # address = models.TextField(blank=True)
-    # pan_number = models.IntegerField(default=0)
-    # pan_card_picture = models.ImageField(null=True, blank=True, help_text="Upload image")
-    # adhar_number = models.IntegerField(unique=True)
-    # adhar_card_pictures = models.ImageField(null=True, blank=True, help_text="Upload image")
-    # mob_no1 = models.IntegerField()
-    # mob_no2 = models.IntegerField(blank=True,null=True)
+    name = models.CharField(max_length=30, help_text='Enter field documentation')
+    father_husband_name =  models.CharField(max_length=30, help_text='Enter field documentation')
+    gender =  models.CharField(max_length= 1, choices=GENDER_CHOICES,help_text='Enter field documentation')
+    hometown =  models.CharField(max_length= 20, help_text='Enter field documentation')
+    pincode =  models.CharField(help_text='Enter pincode',max_length=6)
+    occupation =  models.CharField(max_length= 20, help_text='Enter field documentation')
+    date_joined = models.DateTimeField(auto_now=True)
+    profile_picture = models.ImageField(blank=True,help_text="Upload image")
+    address = models.TextField(blank=True)
+    pan_number = models.IntegerField(default=0)
+    pan_card_picture = models.ImageField(null=True, blank=True, help_text="Upload image")
+    adhar_number = models.IntegerField(unique=True)
+    adhar_card_pictures = models.ImageField(null=True, blank=True, help_text="Upload image")
+    mob_no1 = models.IntegerField()
+    mob_no2 = models.IntegerField(blank=True,null=True)
     dob = models.DateField()
     # signature_image = models.ImageField(null=True, blank=True, help_text="Upload image")
-    # marital_status = models.CharField(max_length=9, choices=Marital_status)
+    marital_status = models.CharField(max_length=9, choices=Marital_status)
 
     created_at = models.DateField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
@@ -64,5 +63,5 @@ class Customer(models.Model):
 
 
 
-
+def Documents
 

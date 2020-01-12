@@ -5,5 +5,5 @@ from agents.models import *
 #
 # admin.site.register(Costumer)
 # admin.site.register(RdUser)
-admin.site.register(Profile)
+admin.site.register(AgentProfile)
 
