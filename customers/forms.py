@@ -7,4 +7,4 @@ class NewCustomerForm(forms.ModelForm):
 
     class Meta:
         model = Customer
-        fields = ['name', 'dob',]
+        exclude =('id','agent','created_at','last_updated')

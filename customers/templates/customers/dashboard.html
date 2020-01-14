@@ -13,15 +13,11 @@
         </div>
 
 <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5 mb-4 he"> <!-- Navbar brand --> <a class="navbar-brand" href="#">Navbar</a> <!-- Collapse button --> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Collapsible content --> <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Links --> <ul class="navbar-nav mr-auto"> <li class="nav-item active"><button type="button" class="open-modal" data-open="modal1">hello</button> </li> <li class="nav-item"> <a class="nav-link" href="#">Features</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Pricing</a> </li> <!-- Dropdown --> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a> <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div> </li> </ul> <!-- Links --> <!-- Search form --> <form class="form-inline"> <input class="form-control" type="text" placeholder="Search" aria-label="Search"> </form> </div> <!-- Collapsible content --> </nav>
-<!--<div id="myTable">-->
-<!--  <div class="pages"></div>-->
-<!--<input type="search" id="search" placeholder="search">-->
-<!--</div>-->
 
 <div id="tableID">
   <table class="table-list" data-currentpage="1">
     <thead>
-      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">Name<i class="caret"></i></button></th>
           <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
       <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
       <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
@@ -48,6 +44,9 @@
             <button type="button" class="btn-tablepage jTablePagePrev">&laquo;</button>
             <ul class="pagination"></ul>
             <button type="button" class="btn-tablepage jTablePageNext">&raquo;</button>
+          </div>
+             <div class="table-filter table-filter1">
+
           </div>
           <div class="table-filter ">
             <input class="search " placeholder="Search ">
@@ -72,13 +71,13 @@
 <div id="tableID">
   <table class="table-list table2" data-currentpage="1">
     <thead>
-      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">NAME<i class="caret"></i></button></th>
           <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
       <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
       <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
 
     </thead>
-    <!-- IMPORTANT, class="list" must be on tbody -->
+
     <tbody class="list">
     {% for customer in agent.customers.all %}
       <tr>
@@ -97,6 +96,9 @@
             <ul class="pagination"></ul>
             <button type="button" class="btn-tablepage jTablePageNext">&raquo;</button>
           </div>
+               <div class="table-filter table-filter1">
+
+          </div>
           <div class="table-filter ">
             <input class="search " placeholder="Search ">
           </div>
@@ -111,51 +113,5 @@
   </div>
 
 </div>
-
-
-<!--	<div class="limiter">-->
-<!--		<div class="container-table100">-->
-<!--			<div class="wrap-table100">-->
-<!--				<div class="table100 ver1 m-b-110">-->
-<!--					<div class="table100-head">-->
-<!--						<table>-->
-<!--							<thead>-->
-<!--								<tr class="row100 head">-->
-<!--									<th class="cell100 column1">Customers</th>-->
-<!--									<th class="cell100 column2">DOB</th>-->
-<!--									<th class="cell100 column3">Hours</th>-->
-<!--									<th class="cell100 column4">Trainer</th>-->
-<!--									<th class="cell100 column5">Spots</th>-->
-<!--								</tr>-->
-<!--							</thead>-->
-<!--						</table>-->
-<!--					</div>-->
-
-<!--					<div class="table100-body js-pscroll">-->
-<!--						<table>-->
-<!--							<tbody>-->
-<!--							{% for customer in agent.customers.all %}-->
-
-<!--								<tr class="row100 body" >-->
-<!--									<td class="cell100 column1"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>-->
-<!--									<td class="cell100 column2">{{ customer.dob }}</td>-->
-<!--									<td class="cell100 column3">9:00 AM - 11:00 AM</td>-->
-<!--									<td class="cell100 column4">Aaron Chapman</td>-->
-<!--									<td class="cell100 column5">10</td>-->
-<!--								</tr>-->
-<!--							{% endfor %}-->
-
-<!--							</tbody>-->
-<!--						</table>-->
-<!--					</div>-->
-<!--				</div>-->
-
-
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-
 
             {% endblock %}
