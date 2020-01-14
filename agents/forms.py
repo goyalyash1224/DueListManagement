@@ -3,6 +3,10 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
+from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Submit, Row, Column
+
 class SignUpForm(UserCreationForm):
     email = forms.CharField(max_length=254, required=True, widget=forms.EmailInput())
     class Meta:
@@ -23,14 +27,27 @@ class SignUpForm(UserCreationForm):
 
 
 
-class EditProfileForm(UserChangeForm):
+class EditProfileForm(forms.Form):
+    email = forms.CharField(widget=forms.TextInput(attrs={'placholder':'Email'}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'placholder':'first_name'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'placholder':'last_name'}))
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Row(
+                Column('first_name', css_class='form-group col-md-6 mb-0'),
+                Column('last_name', css_class='form-group col-md-6 mb-0'),
+                css_class='form-row'
+            ),
+            Row(
+                Column('email', css_class='form-group col-md-6 mb-0'),
+                                css_class='form-row'
+            ),
 
-    class Meta:
-        model = User
-        fields = (
-            'email',
-            'first_name',
-            'last_name',
-
+            Submit('submit', 'Sign in')
         )
+
+
+

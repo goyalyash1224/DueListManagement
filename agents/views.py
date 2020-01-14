@@ -30,14 +30,14 @@ def view_profile(request):
 
 def edit_profile(request):
     if request.method == 'POST':
-        form = EditProfileForm(request.POST, instance=request.user)
+        form = EditProfileForm(request.POST)
 
         if form.is_valid():
             form.save()
             return redirect('view_profile')
 
     else:
-        form = EditProfileForm(instance=request.user)
+        form = EditProfileForm()
         args = {'form':form}
         return render(request, 'agents/edit_profile.html',args)
 

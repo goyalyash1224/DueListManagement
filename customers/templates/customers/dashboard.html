@@ -3,10 +3,15 @@
         <div class="profile-box">
           <div class="profile-pic" style="background-image: url(https://mdbootstrap.com/img/logo/mdb-transparent.png);"></div>
             <h1 class="profile-heading" > {{ agent.username }} </h1>
+            <h1>Hello Dashboard</h1>
+            <div>
+
+</div>
+
             <h4 class="profile-content">{{ agent.email }}</h4>
 
 <<<<<<< HEAD
-			<h4 class="profile-content"><a href="#">Edit profile</a></h4>
+			<h4 class="profile-content"><a href="{% url 'edit_profile' %}">Edit profile</a></h4>
 
 =======
 >>>>>>> 34d8cb2b3f1a7497db7095789afe7497dab43215
@@ -30,7 +35,9 @@
 
     </section>
   </div>
+
 </div>
+
 
 <!--	<div class="limiter">-->
 <!--		<div class="container-table100">-->
@@ -75,5 +82,6 @@
 <!--			</div>-->
 <!--		</div>-->
 <!--	</div>-->
+
 
             {% endblock %}

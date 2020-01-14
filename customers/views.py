@@ -10,11 +10,21 @@ from django.contrib.auth.models import User
 @login_required
 def dashboard(request):
     if request.user.is_authenticated:
-        return render(request, 'customers/dashboard.html',{'agent':request.user})
+        data = get_data(request.user)
+        return render(request, 'customers/dashboard.html',{'agent':request.user,'data':data})
     else:
         return redirect('Home')
 
 
+def get_data(user):
+    content = []
+    info = {}
+    for customer in user.customers.all():
+        info['fullname'] = customer.name
+        info['dob'] = customer.dob
+        content.append(info)
+
+    return content
 
 
 def add_new_customer(request):
