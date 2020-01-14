@@ -13,9 +13,51 @@
         </div>
 
 <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5 mb-4 he"> <!-- Navbar brand --> <a class="navbar-brand" href="#">Navbar</a> <!-- Collapse button --> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> <!-- Collapsible content --> <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Links --> <ul class="navbar-nav mr-auto"> <li class="nav-item active"><button type="button" class="open-modal" data-open="modal1">hello</button> </li> <li class="nav-item"> <a class="nav-link" href="#">Features</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Pricing</a> </li> <!-- Dropdown --> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a> <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div> </li> </ul> <!-- Links --> <!-- Search form --> <form class="form-inline"> <input class="form-control" type="text" placeholder="Search" aria-label="Search"> </form> </div> <!-- Collapsible content --> </nav>
-<div id="myTable">
-  <div class="pages"></div>
-<input type="search" id="search" placeholder="search">
+<!--<div id="myTable">-->
+<!--  <div class="pages"></div>-->
+<!--<input type="search" id="search" placeholder="search">-->
+<!--</div>-->
+
+<div id="tableID">
+  <table class="table-list" data-currentpage="1">
+    <thead>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+          <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+    </thead>
+    <!-- IMPORTANT, class="list" must be on tbody -->
+    <tbody class="list">
+    {% for customer in agent.customers.all %}
+      <tr>
+        <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="table-footer">
+          <div class="table-pagination">
+            <button type="button" class="btn-tablepage jTablePagePrev">&laquo;</button>
+            <ul class="pagination"></ul>
+            <button type="button" class="btn-tablepage jTablePageNext">&raquo;</button>
+          </div>
+          <div class="table-filter ">
+            <input class="search " placeholder="Search ">
+          </div>
+
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
 </div>
 
           <div class="modal" id="modal1" data-animation="slideInOutLeft">
@@ -27,7 +69,44 @@
       </button>
     </header>
     <section class="modal-content">
+<div id="tableID">
+  <table class="table-list table2" data-currentpage="1">
+    <thead>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+          <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortID">#<i class="caret"></i></button></th>
 
+    </thead>
+    <!-- IMPORTANT, class="list" must be on tbody -->
+    <tbody class="list">
+    {% for customer in agent.customers.all %}
+      <tr>
+        <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+          <td class="minify sortID"><a href="{% url 'customer_profile' customer.id %}">{{ customer.name }}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="table-footer">
+          <div class="table-pagination">
+            <button type="button" class="btn-tablepage jTablePagePrev">&laquo;</button>
+            <ul class="pagination"></ul>
+            <button type="button" class="btn-tablepage jTablePageNext">&raquo;</button>
+          </div>
+          <div class="table-filter ">
+            <input class="search " placeholder="Search ">
+          </div>
+
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>
     </section>
   </div>
 
