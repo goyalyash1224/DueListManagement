@@ -545,209 +545,214 @@ background:#fff;
   color:#48484a;
 }
 
-[ Scroll bar ]*/
-.js-pscroll {
-  position: relative;
-  overflow: hidden;
-}
-
-.table100 .ps__rail-y {
-  width: 9px;
-  background-color: transparent;
-  opacity: 1 !important;
-  right: 5px;
-}
-
-.table100 .ps__rail-y::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #ebebeb;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
-}
-
-.table100 .ps__rail-y .ps__thumb-y {
-  width: 100%;
-  right: 0;
-  background-color: transparent;
-  opacity: 1 !important;
-}
-
-.table100 .ps__rail-y .ps__thumb-y::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #cccccc;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-
-.limiter {
-  width: 1366px;
-  margin: 0 auto;
-}
-
-.container-table100 {
-  width: 124%;
-  min-height: 100vh;
-  background: #fff;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 33px 30px;
-}
-
-.wrap-table100 {
-  width: 1170px;
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-.table100 {
-  background-color: #fff;
-}
-
 table {
-  width: 100%;
+	 border-collapse: collapse;
+	 border-spacing: 0px;
+	 line-height: 16px;
 }
-
-th, td {
-  font-weight: unset;
-  padding-right: 10px;
+ th {
+	 text-align: left;
+	 font-weight: normal;
+	 font-size: 12px;
 }
-
-.column1 {
-  width: 33%;
-  padding-left: 40px;
+ button {
+	 background: none;
+	 background-color: transparent;
+	 box-shadow: none;
+	 border: none;
+	 font-family: inherit;
+	 color: inherit;
+	 border-radius: 0;
+	 cursor: pointer;
 }
-
-.column2 {
-  width: 13%;
+ .number {
+	 width: 1%;
+	 white-space: nowrap;
+	 text-align: right;
+	 padding-left: 20px !important;
 }
-
-.column3 {
-  width: 22%;
+ .ellipsis {
+	 overflow: hidden;
+	 white-space: nowrap;
+	 text-overflow: ellipsis;
 }
-
-.column4 {
-  width: 19%;
+ .textcenter {
+	 text-align: center;
 }
-
-.column5 {
-  width: 13%;
+ .textright {
+	 text-align: right;
 }
-
-.table100-head th {
-  padding-top: 18px;
-  padding-bottom: 18px;
+ .minify {
+	 width: 1%;
+	 white-space: nowrap;
 }
-
-.table100-body td {
-  padding-top: 16px;
-  padding-bottom: 16px;
+ .table-icon {
+	 width: 30px;
+	 max-width: 30px;
+	 text-align: center;
 }
-
-/*==================================================================
-[ Fix header ]*/
-.table100 {
-  position: relative;
-  padding-top: 60px;
+ .table-list {
+	 height: 280px;
 }
-
-.table100-head {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
+ .table-list {
+	 background-color: #fff;
+	 border: 1px solid #d2d2d2;
+	 width: 800px;
+	 margin: 0 auto;
 }
-
-.table100-body {
-  max-height: 585px;
-  overflow: auto;
+ .table-list th {
+	 border-bottom: 1px solid #d2d2d2;
 }
-
-
-/*==================================================================
-[ Ver1 ]*/
-
-.table100.ver1 th {
-  font-family: Lato-Bold;
-  font-size: 18px;
-  color: #fff;
-  line-height: 1.4;
-
-  background-color: #1c2331;
+ .table-list tbody td {
+	 white-space: nowrap;
+	 padding: 9px;
+	 vertical-align: top;
+	 height: 35px;
+	 border-bottom: 1px solid #d2d2d2;
 }
-
-.table100.ver1 td {
-  font-family: Lato-Regular;
-  font-size: 15px;
-  color: #808080;
-  line-height: 1.4;
+ tr:last-child td {
+	 height: auto;
 }
-
-.table100.ver1 .table100-body tr:nth-child(even) {
-  background-color: #f8f6ff;
+ .sort {
+	 text-align: left;
+	 padding: 9px;
+	 border: none;
+	 background: none;
+	 display: block;
+	 width: 100%;
+	 color: #808080;
+	 line-height: 14px;
 }
-
-/*---------------------------------------------*/
-
-.table100.ver1 {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+ .sort.textcenter {
+	 text-align: center;
 }
-
-.table100.ver1 .ps__rail-y {
-  right: 5px;
+ .sort.textright {
+	 text-align: right;
 }
-
-.table100.ver1 .ps__rail-y::before {
-  background-color: #ebebeb;
+ .caret {
+	 line-height: 0;
 }
-
-.table100.ver1 .ps__rail-y .ps__thumb-y::before {
-  background-color: #cccccc;
+ .caret:after {
+	 content: "";
 }
-.wrap-table100 {
-    width: 71%;
-    margin-top: 311px;
-    margin-left: -1%;
-
+ .asc .caret:after {
+	 width: 0;
+	 height: 0;
+	 border-left: 3px solid transparent;
+	 border-right: 3px solid transparent;
+	 border-top: 3px solid #808080;
+	 content: "";
+	 position: relative;
+	 top: -3px;
+	 right: -4px;
+	 font-size: 0;
 }
-
-
-<!--.function {-->
-<!--    border: 1px solid black;-->
-<!--    box-sizing: border-box;-->
-<!--    width: 71%;-->
-<!--    height: 43px;-->
-<!--    margin-left: 368px;-->
-<!--    margin-top: 142px;-->
-<!--    position: absolute;-->
-<!--    background: #1c2331;-->
-<!--    border-radius:12px;-->
-<!--}-->
+ .desc .caret:after {
+	 width: 0;
+	 height: 0;
+	 border-left: 3px solid transparent;
+	 border-right: 3px solid transparent;
+	 border-bottom: 3px solid #808080;
+	 content: "";
+	 position: relative;
+	 top: -7px;
+	 right: -4px;
+	 font-size: 0;
+}
+ .sort .caret {
+	 display: none;
+}
+ .sort.asc .caret {
+	 display: inline-block;
+}
+ .sort.desc .caret {
+	 display: inline-block;
+}
+ .sortUnitPrice, .sortQty, .sortTotal {
+	 min-width: 90px;
+}
+ .table-footer {
+	 border-top: 1px solid #d2d2d2;
+	 padding: 0;
+}
+ .table-filter {
+	 float: right;
+	 border-left: 1px solid #d2d2d2;
+	 margin-left:-24%;
+}
+ .table-filter .search {
+	 padding: 9px;
+	 width: 300px;
+	 border: none;
+	 background: transparent;
+	 box-shadow: none;
+}
+ .table-pagination {
+	 display: table;
+	 border-collapse: collapse;
+	 width: 156px;
+	 float: left;
+	 border-right: 1px solid #d2d2d2;
+	 padding: 6px;
+}
+ .btn-tablepage {
+	 display: table-cell;
+	 width: 33px;
+	 padding: 9px;
+}
+ .pagination {
+	 display: table-cell;
+	 text-align: center;
+	 list-style: none;
+	 margin: 0;
+	 padding: 0;
+	 width: 90px;
+}
+ .pagination li {
+	 display: inline-table;
+	 border: 1px solid #eaeaea;
+}
+ .page {
+	 display: block;
+	 padding: 4px 0;
+	 width: 22px;
+	 text-align: center;
+	 text-decoration: none;
+	 line-height: 12px;
+	 font-size: 12px;
+	 color: #808080;
+}
+ .pagination .disabled {
+	 display: none;
+}
+ .pagination .active {
+	 border-color: #aaa;
+}
+ .active .page {
+	 background: #aaa;
+	 color: #fff;
+}
+/* unused */
+ .table-btn-dropdown {
+	 padding: 8px;
+}
+ .btn-with-caret {
+	 position: relative;
+	 padding-right: 24px;
+}
+ .btn-with-caret:after {
+	 content: "";
+	 display: block;
+	 position: absolute;
+	 top: 50%;
+	 right: 10px;
+	 margin-top: -2px;
+	 width: 0;
+	 height: 0;
+	 border-top: 4px solid #333;
+	 border-right: 4px solid transparent;
+	 border-left: 4px solid transparent;
+}
 
 .he{
 margin-top:6%;
@@ -755,11 +760,7 @@ width:74%;
 margin-left:25%;
 position:absolute;
 }
-#myTable{
-position:absolute;
-   margin-left:28%;
-   margin-top:200px;
-}
+
 .btn-group, .btn-group-vertical {
     position: relative;
     display: -ms-inline-flexbox;
@@ -875,7 +876,41 @@ position:absolute;
 width:100%;
 height:100%;
 }
-
+.table-list {
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    width: 67%;
+    /* margin: 92px auto; */
+    margin-left: 29%;
+    margin-top: 16%;
+    position: absolute;
+}
+.table2 {
+    margin-left: 0%;
+    width: 96%;
+}
+thead{
+   background:#eceff1;
+   color:black;
+}
+.sort {
+    color: black;
+    font-weight:bold;
+    border-radius:1px;
+    }
+    .table-list {
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    width: 74%;
+    /* margin: 92px auto; */
+    margin-left: 25%;
+    margin-top: 16%;
+    position: absolute;
+}
+.table2 {
+    margin-left: 0%;
+    width: 96%;
+}
   </style>
 
 </head>
@@ -935,7 +970,8 @@ height:100%;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
-<script type="text/javascript" src="{% static 'jquery/table-sortable.js' %}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
 
 <script>
   var Swipes = new Swiper('.bvs-container', {
@@ -950,58 +986,38 @@ height:100%;
 });
 </script>
 <script>
+    var pagingRows = 6;
 
-    var data = [
+var paginationOptions = {
+    innerWindow: 1,
+    left: 0,
+    right: 0
+};
+var options = {
+  valueNames: [ 'sortID', 'sortDesc', 'sortTotal' ],
+  page: pagingRows,
+  plugins: [ ListPagination(paginationOptions) ],
+};
 
-    {
-        dob: 5329,
+var tableList = new List('tableID', options);
 
-        fullname: 'Test User',
-
-    },
-]
-
-
-var columns = {
-
-    'dob': 'Full Name',
-    'fullname': 'Date of Birth',
-
-}
-
-var TestData = {
-    data: data,
-    columns: columns
-}
-var table = $('#myTable').tableSortable({
-    data: TestData.data,
-    columns: TestData.columns,
-    Parsing: true,
-    columnsHtml: function(value, key) {
-      return value;
-    },
-    pagination: 5,
-    showPaginationLabel: true,
-    prevText: 'Prev',
-    nextText: 'Next',
-    searchField: $('#search'),
-    responsive: [
-      {
-        maxWidth: 992,
-        minWidth: 769,
-        columns: TestData.col,
-        pagination: true,
-        paginationLength: 3
-      },
-      {
-        maxWidth: 768,
-        minWidth: 0,
-        columns: TestData.colXS,
-        pagination: true,
-        paginationLength: 2
-      }
-    ]
+$('.jTablePageNext').on('click', function(){
+    var list = $('.pagination').find('li');
+    $.each(list, function(position, element){
+        if($(element).is('.active')){
+            $(list[position+1]).trigger('click');
+        }
+    })
 })
+$('.jTablePagePrev').on('click', function(){
+    var list = $('.pagination').find('li');
+    $.each(list, function(position, element){
+        if($(element).is('.active')){
+            $(list[position-1]).trigger('click');
+        }
+    })
+})
+
 
 
 </script>
@@ -1041,8 +1057,3 @@ document.addEventListener("keyup", e => {
 
 </body>
 </html>
-<!--   <div class="container">-->
-<!--      {% block content %}-->
-<!--       <h1>hello wolrd</h1>-->
-<!--      {% endblock %}-->
-<!--    </div>-->
