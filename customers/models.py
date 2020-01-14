@@ -63,5 +63,7 @@ class Customer(models.Model):
 
 
 
-# def Documents
-
+class Document(models.Model):
+    customer = models.ForeignKey(Customer,on_delete=models.PROTECT)
+    file = models.FileField(upload_to='docs/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
